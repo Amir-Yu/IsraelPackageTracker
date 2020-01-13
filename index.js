@@ -33,13 +33,7 @@ app.get("/aramex/:barcode", (req, res) => {
   aramextrace(req.params.barcode).then(result => res.json(result));
 });
 
-app.get("/developer", (req, res) => {
-  res.json({ "developer name": "Yurista Amir" });
-});
-
 const port = process.env.PORT || 80;
 app.listen(port, () => {
   console.log(`server is listening on port:${port}`);
 });
-
-let x = dhl("4441977680");
