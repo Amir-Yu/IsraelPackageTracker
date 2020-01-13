@@ -1,2 +1,2 @@
 # IsraelPackageTracker
-Package track API with Israeli carriers: Israelpost, Aramex
+Package track WebAPI with Israeli carriers: Israelpost, Aramex
