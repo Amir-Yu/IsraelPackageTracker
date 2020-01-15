@@ -4,6 +4,7 @@ const morgan = require("morgan");
 const israelpostrace = require("./israelPost");
 const aramextrace = require("./aramex");
 const dhl = require("./dhl");
+const boxit = require("./boxit");
 
 dotenv.config({ path: "./config.env" });
 
@@ -31,6 +32,10 @@ app.get("/israelpost/:barcode", (req, res) => {
 
 app.get("/aramex/:barcode", (req, res) => {
   aramextrace(req.params.barcode).then(result => res.json(result));
+});
+
+app.get("/dhl/:barcode", (req, res) => {
+  dhl(req.params.barcode).then(result => res.json(JSON.parse(result)));
 });
 
 const port = process.env.PORT || 80;
