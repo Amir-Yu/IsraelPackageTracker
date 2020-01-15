@@ -3,7 +3,6 @@ const cheerio = require("cheerio");
 
 const config = {
   host: "mypost.israelpost.co.il",
-  userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0",
   prePostURL: "/itemtrace",
   postURL: "/umbraco/Surface/ItemTrace/GetItemTrace",
   //URL = `https://mypost.israelpost.co.il/itemtrace?OpenForm&itemcode=${itemID}`,
@@ -42,7 +41,7 @@ module.exports = async itemID => {
       //resolveWithFullResponse: true,
       headers: {
         Host: config.host,
-        "User-Agent": config.userAgent,
+        "User-Agent": process.env.USERAGENT,
         "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
 
         Origin: `https://${config.host}`,

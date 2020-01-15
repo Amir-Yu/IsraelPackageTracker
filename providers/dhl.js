@@ -2,10 +2,9 @@ const request = require("request-promise");
 
 module.exports = async itemID => {
   const config = {
-    //host: "www.dhl.com/en/express/tracking.shtml?AWB=11111111&brand=DHL",
     host: "www.logistics.dhl",
     URL: `https://www.logistics.dhl/utapi?trackingNumber=${itemID}&language=en&requesterCountryCode=DE`,
-    userAgent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:71.0) Gecko/20100101 Firefox/71.0"
+    userAgent: process.env.USERAGENT
   };
 
   try {
